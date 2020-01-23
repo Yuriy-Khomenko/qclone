@@ -36,7 +36,7 @@ For more balanced testing of performance, tests of other projects were used
 
 ```
 Nodejs - v13.3.0
-Date - 22.01.2019
+Date - 22.01.2020
 ```
 
 [rfdc](https://github.com/davidmarkclements/rfdc) project test result
