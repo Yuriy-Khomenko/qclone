@@ -11,7 +11,7 @@ const { qclone } = require('qclone');
 	
 or connect separate modules:
 
-const qclone = require('qclone/qcloneStrictCircular');
+const qclone = require('qclone/src/qcloneStrictCircular');
 
 ```javascript
 const newCloneObj = qclone( { foo: 1 } );
