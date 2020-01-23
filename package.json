@@ -1,0 +1,38 @@
+{
+  "name": "qclone",
+  "version": "1.0.0",
+  "description": "the fastest function for deep clone js objects compatible with es6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Yuriy-Khomenko/qclone.git"
+  },
+  "keywords": [
+    "fast",
+    "fastest",
+    "deep",
+    "clone",
+    "copy",
+    "deep-clone",
+    "deep-copy",
+    "deepclone",
+    "performance",
+    "fast-deep-clone",
+    "fast-deep-copy",
+    "fast-clone",
+    "fast-copy",
+    "clone-object",
+    "copy-object",
+    "fastclone",
+    "fastcopy"
+  ],
+  "author": "Yuriy Khomenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yuriy-Khomenko/qclone/issues"
+  },
+  "homepage": "https://github.com/Yuriy-Khomenko/qclone#readme"
+}
