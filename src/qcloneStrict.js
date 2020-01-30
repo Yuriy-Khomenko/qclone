@@ -17,12 +17,7 @@ function qcloneStrict(o){
     switch(o.constructor){
       case Object:
       case undefined:  
-        let c;
-        if(o.constructor){
-          c = __cr__(__gpo__(o));
-        }else{
-          c = __cr__(null);
-        }
+        let c = (o.constructor) ? __cr__(__gpo__(o)) : __cr__(null);
         let keys = [...__gopn__(o), ...__gops__(o)], length = keys.length;
         for(let i = 0; i < length; i++){
           let nameKey = keys[i];
@@ -40,11 +35,7 @@ function qcloneStrict(o){
         for(let i = 0; i < j; i++){
           if(i in o){
             p = o[i];
-            if(typeof p !== 'object' || p === null){
-              a[i] = p;
-            }else{
-              a[i] = qclone(p);
-            }
+            a[i] = (typeof p !== 'object' || p === null) ? p : qclone(p);
           }
         }
         return a;
@@ -52,21 +43,13 @@ function qcloneStrict(o){
         let b,m,x = new Map();
         for(b of o){
           m = b[1];
-          if(typeof m !== 'object' || m === null){
-            x.set(b[0], m);
-          }else{
-            x.set(b[0], qclone(m));
-          }
+          (typeof m !== 'object' || m === null) ? x.set(b[0], m) : x.set(b[0], qclone(m));
         }
         return x;
       case Set:
         let v,n = new Set();
         for(v of o){
-          if(typeof v !== 'object' || v === null){
-            n.add(v);
-          }else{
-            n.add(qclone(v));
-          }
+          (typeof v !== 'object' || v === null) ? n.add(v) : n.add(qclone(v));
         }
         return n;
       case Promise:

@@ -12,11 +12,7 @@ function qclone(o){
       for(i in o){
         if(__qhop__.call(o, i)){
           l = o[i];
-          if(typeof l !== 'object' || l === null){
-            c[i] = l;
-          }else{
-            c[i] = qclone(l);
-          }
+          c[i] = (typeof l !== 'object' || l === null) ? l : qclone(l);
         }
       }
       return c;
@@ -25,11 +21,7 @@ function qclone(o){
       for(let i = 0; i < j; i++){
         if(i in o){
           p = o[i];
-          if(typeof p !== 'object' || p === null){
-            a[i] = p;
-          }else{
-            a[i] = qclone(p);
-          }
+          a[i] = (typeof p !== 'object' || p === null) ? p : qclone(p);
         }
       }
       return a;
@@ -37,32 +29,20 @@ function qclone(o){
       let q,y,d = Object.create(null);
       for(q in o){
         y = o[q];
-        if(typeof y !== 'object' || y === null){
-          d[q] = y;
-        }else{
-          d[q] = qclone(y);
-        }
+        d[q] = (typeof y !== 'object' || y === null) ? y : qclone(y);
       }
       return d;
     case Map:
       let b,m,x = new Map();
       for(b of o){
         m = b[1];
-        if(typeof m !== 'object' || m === null){
-          x.set(b[0], m);
-        }else{
-          x.set(b[0], qclone(m));
-        }
+        (typeof m !== 'object' || m === null) ? x.set(b[0], m) : x.set(b[0], qclone(m));
       }
       return x;
     case Set:
       let v,n = new Set();
       for(v of o){
-        if(typeof v !== 'object' || v === null){
-          n.add(v);
-        }else{
-          n.add(qclone(v));
-        }
+        (typeof v !== 'object' || v === null) ? n.add(v) : n.add(qclone(v));
       }
       return n;
     case Promise:
@@ -111,11 +91,7 @@ function qclone(o){
       for(s in o){
         if(__qhop__.call(o, s)){
           u = o[s];
-          if(typeof u !== 'object' || u === null){
-            f[s] = u;
-          }else{
-            f[s] = qclone(u);
-          }
+          f[s] = (typeof u !== 'object' || u === null) ? u : qclone(u);
         }
       }
       return f;

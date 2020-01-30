@@ -17,12 +17,7 @@ function qcloneStrictCircular(o){
     switch(o.constructor){
       case Object:
       case undefined:
-        let c;
-        if(o.constructor){
-          c = __cr__(__gpo__(o));
-        }else{
-          c = __cr__(null);
-        }
+        let c = (o.constructor) ? __cr__(__gpo__(o)) : __cr__(null);
         __o__.push(o);__c__.push(c);
         let keys = [...__gopn__(o), ...__gops__(o)], length = keys.length;
         for(let i = 0; i < length; i++){
@@ -31,11 +26,7 @@ function qcloneStrictCircular(o){
             let descVal = __gopd__(o, nameKey), value = o[nameKey];
             if(typeof value === 'object'){
               let pi = __o__.indexOf(value);
-              if(~pi){
-                descVal.value = __c__[pi];
-              }else{
-                descVal.value = qclone(value);
-              }
+              descVal.value = (~pi) ? __c__[pi] : qclone(value);
             }
             __dp__(c, nameKey, descVal);
           }
@@ -51,11 +42,7 @@ function qcloneStrictCircular(o){
               a[i] = p;
             }else{
               let pi = __o__.indexOf(p);
-              if(~pi){
-                a[i] = __c__[pi];
-              }else{
-                a[i] = qclone(p);
-              }
+              a[i] = (~pi) ? __c__[pi] : qclone(p);
             }
           }
         }
@@ -64,21 +51,13 @@ function qcloneStrictCircular(o){
         let b,m,x = new Map();
         for(b of o){
           m = b[1];
-          if(typeof m !== 'object' || m === null){
-            x.set(b[0], m);
-          }else{
-            x.set(b[0], qclone(m));
-          }
+          (typeof m !== 'object' || m === null) ? x.set(b[0], m) : x.set(b[0], qclone(m));
         }
         return x;
       case Set:
         let v,n = new Set();
         for(v of o){
-          if(typeof v !== 'object' || v === null){
-            n.add(v);
-          }else{
-            n.add(qclone(v));
-          }
+          (typeof v !== 'object' || v === null) ? n.add(v) : n.add(qclone(v));
         }
         return n;
       case Promise:
@@ -132,11 +111,7 @@ function qcloneStrictCircular(o){
             let descVal = __gopd__(o, nameKey), value = o[nameKey];
             if(typeof value === 'object'){
               let pi = __o__.indexOf(value);
-              if(~pi){
-                descVal.value = __c__[pi];
-              }else{
-                descVal.value = qclone(value);
-              }
+              descVal.value = (~pi) ? __c__[pi] : qclone(value);
             }
             __dp__(f, nameKey, descVal);
           }

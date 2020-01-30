@@ -22,11 +22,7 @@ function qcloneCircular(o){
               c[i] = l;
             }else{
               let pi = __o__.indexOf(l);
-              if(~pi){
-                c[i] = __c__[pi];
-              }else{
-                c[i] = qclone(l);
-              }
+              c[i] = (~pi) ? __c__[pi] : qclone(l);
             }
           }
         }
@@ -41,11 +37,7 @@ function qcloneCircular(o){
               a[i] = p;
             }else{
               let pi = __o__.indexOf(p);
-              if(~pi){
-                a[i] = __c__[pi];
-              }else{
-                a[i] = qclone(p);
-              }
+              a[i] = (~pi) ? __c__[pi] : qclone(p);
             }
           }
         }
@@ -54,16 +46,12 @@ function qcloneCircular(o){
         __o__.push(o);__c__.push(c);
         let q,y,d = Object.create(null);
         for(q in o){
-          y = o[q]
+          y = o[q];
           if(typeof y !== 'object' || y === null){
             d[q] = y;
           }else{
-            let pi = __o__.indexOf(y)
-            if(~pi){
-              d[q] = __c__[pi];
-            }else{
-              d[q] = qclone(y);
-            }
+            let pi = __o__.indexOf(y);
+            d[q] = (~pi) ? __c__[pi] : qclone(y);
           }
         }
         __o__.pop();__c__.pop();
@@ -72,21 +60,13 @@ function qcloneCircular(o){
         let b,m,x = new Map();
         for(b of o){
           m = b[1];
-          if(typeof m !== 'object' || m === null){
-            x.set(b[0], m);
-          }else{
-            x.set(b[0], qclone(m));
-          }
+          (typeof m !== 'object' || m === null) ? x.set(b[0], m) : x.set(b[0], qclone(m));
         }
         return x;
       case Set:
         let v,n = new Set();
         for(v of o){
-          if(typeof v !== 'object' || v === null){
-            n.add(v);
-          }else{
-            n.add(qclone(v));
-          }
+          (typeof v !== 'object' || v === null) ? n.add(v) : n.add(qclone(v));
         }
         return n;
       case Promise:
@@ -141,11 +121,7 @@ function qcloneCircular(o){
               f[s] = u;
             }else{
               let pi = __o__.indexOf(u);
-              if(~pi){
-                f[s] = __c__[pi];
-              }else{
-                f[s] = qclone(u);
-              }
+              f[s] = (~pi) ? __c__[pi] : qclone(u);
             }
           }
         }
