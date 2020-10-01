@@ -86,7 +86,7 @@ function qcloneStrictCircular(o){
       // case BigInt:
       //   return Object(o.valueOf());
       case DataView:
-        return new DataView(o.buffer, o.byteLength, o.byteOffset);
+        return new DataView(new Uint8Array(new Uint8Array(o.buffer)).buffer, o.byteOffset, o.byteLength);
       case ArrayBuffer:
         //case SharedArrayBuffer:
         return new Uint8Array(new Uint8Array(o)).buffer;

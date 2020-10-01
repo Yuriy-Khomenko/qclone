@@ -16,7 +16,7 @@ function qcloneStrict(o){
     if (typeof o !== 'object' || o === null)return o;
     switch(o.constructor){
       case Object:
-      case undefined:  
+      case undefined:
         let c = (o.constructor) ? __cr__(__gpo__(o)) : __cr__(null);
         let keys = [...__gopn__(o), ...__gops__(o)], length = keys.length;
         for(let i = 0; i < length; i++){
@@ -78,7 +78,7 @@ function qcloneStrict(o){
       // case BigInt:
       //   return Object(o.valueOf());
       case DataView:
-        return new DataView(o.buffer, o.byteLength, o.byteOffset);
+        return new DataView(new Uint8Array(new Uint8Array(o.buffer)).buffer, o.byteOffset, o.byteLength);
       case ArrayBuffer:
         //case SharedArrayBuffer:
         return new Uint8Array(new Uint8Array(o)).buffer;
