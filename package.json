@@ -1,6 +1,6 @@
 {
   "name": "qclone",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "the fastest function for deep clone js objects compatible with es6",
   "main": "src/index.js",
   "scripts": {

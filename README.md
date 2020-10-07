@@ -2,7 +2,7 @@
 
 the fastest function for deep clone js objects compatible with es6
 
-*according to the author, this comparison script is the fastest in the industry(watch benchmarks)
+*according to the author, this cloning script is the fastest in the industry(watch benchmarks)
 
 ### Install
 
