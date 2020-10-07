@@ -31,7 +31,7 @@ const newCloneObj = qclone({ foo: 1 });
 For more than 90% of cases, the algorithm is suitable - qclone.
 If you lack it, for example, for cyclic objects or strict copying, you can use the following algorithms:
 
-- qcloneStrict - for strict cloning(non-enumerable and Symbol properties, );
+- qcloneStrict - for strict cloning(non-enumerable and Symbol properties);
 - qcloneCircular - for cyclic objects (without strict cloning);
 - qcloneStrictCircular - for strict cloning of cyclic objects;
 
