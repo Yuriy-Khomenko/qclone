@@ -1,7 +1,8 @@
 ## qclone
 
-the fastest function for deep clone js objects compatible with es6   
-!!!according to the author, this script is the [fastest](#benchmarks) in the industry!!!
+the fastest function for deep clone js objects compatible with es6
+
+*according to the author, this comparison script is the fastest in the industry(watch benchmarks)
 
 ### Install
 
@@ -30,16 +31,14 @@ const newCloneObj = qclone({ foo: 1 });
 For more than 90% of cases, the algorithm is suitable - qclone.
 If you lack it, for example, for cyclic objects or strict copying, you can use the following algorithms:
 
-- qcloneStrict - for strict cloning;
+- qcloneStrict - for strict cloning(non-enumerable and Symbol properties, );
 - qcloneCircular - for cyclic objects (without strict cloning);
 - qcloneStrictCircular - for strict cloning of cyclic objects;
 
-<a name="benchmarks">
 ### Benchmarks
-</a>
 
 For more balanced testing of performance, tests of other projects were used
-   
+
 ```
 Nodejs - v13.3.0
 Date - 22.01.2020
@@ -76,6 +75,7 @@ benchRfdcCirclesProto*100: 5541.977ms
 | fast-copy (strict)   | 151.173   |
 | fast-clone           | 125.238   |
 | qcloneStrict         | 121.703   |
+
 
 ```
 Nodejs - v14.9.0
