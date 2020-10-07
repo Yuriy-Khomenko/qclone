@@ -1,5 +1,7 @@
 ## qclone
-the fastest function for deep clone js objects compatible with es6
+
+the fastest function for deep clone js objects compatible with es6   
+!!!according to the author, this script is the [fastest](#benchmarks) in the industry!!!
 
 ### Install
 
@@ -14,7 +16,7 @@ or connect separate modules:
 const qclone = require('qclone/src/qcloneStrictCircular');
 
 ```javascript
-const newCloneObj = qclone( { foo: 1 } );
+const newCloneObj = qclone({ foo: 1 });
 ```
 
 ### Features
@@ -27,14 +29,17 @@ const newCloneObj = qclone( { foo: 1 } );
 
 For more than 90% of cases, the algorithm is suitable - qclone.
 If you lack it, for example, for cyclic objects or strict copying, you can use the following algorithms:
+
 - qcloneStrict - for strict cloning;
 - qcloneCircular - for cyclic objects (without strict cloning);
 - qcloneStrictCircular - for strict cloning of cyclic objects;
 
+<a name="benchmarks">
 ### Benchmarks
+</a>
 
 For more balanced testing of performance, tests of other projects were used
-
+   
 ```
 Nodejs - v13.3.0
 Date - 22.01.2020
@@ -61,16 +66,16 @@ benchRfdcCirclesProto*100: 5541.977ms
 | Name                 | Ops / sec |
 | -------------------- | --------- |
 | qclone               | 2,069.919 |
-| qcloneCircular       |  1,092.98 |
-| fast-copy            |  674.629  |
-| lodash.cloneDeep     |  323.661  |
-| clone                |  323.007  |
-| ramda                |  206.035  |
-| deepclone            |  175.292  |
-| qcloneStrictCircular |  156.258  |
-| fast-copy (strict)   |  151.173  |
-| fast-clone           |  125.238  |
-| qcloneStrict         |  121.703  |
+| qcloneCircular       | 1,092.98  |
+| fast-copy            | 674.629   |
+| lodash.cloneDeep     | 323.661   |
+| clone                | 323.007   |
+| ramda                | 206.035   |
+| deepclone            | 175.292   |
+| qcloneStrictCircular | 156.258   |
+| fast-copy (strict)   | 151.173   |
+| fast-clone           | 125.238   |
+| qcloneStrict         | 121.703   |
 
 ```
 Nodejs - v14.9.0
@@ -115,11 +120,12 @@ Benchmark :: json
   qclone                 x 169,658 ops/sec ±0.59% (90 runs sampled)
 
   Benchmark :: full
-  lodash                 x 15,970 ops/sec ±0.59% (89 runs sampled)
-  clone/include          x 12,483 ops/sec ±3.87% (82 runs sampled)
-  klona/full             x 26,556 ops/sec ±1.47% (88 runs sampled)
-  qclone                 x 260,155 ops/sec ±0.63% (91 runs sampled)
-  ```
+  lBenchmark :: full
+  lodash                 x 15,230 ops/sec ±3.17% (89 runs sampled)
+  clone/include          x 13,651 ops/sec ±0.43% (86 runs sampled)
+  klona/full             x 26,493 ops/sec ±2.05% (92 runs sampled)
+  qclone(qcloneStrict)   x 39,462 ops/sec ±1.05% (90 runs sampled)
+```
 
 ### License
 
