@@ -1,6 +1,6 @@
 {
   "name": "qclone",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "the fastest function for deep clone js objects compatible with es6",
   "main": "src/index.js",
   "scripts": {
@@ -27,7 +27,17 @@
     "clone-object",
     "copy-object",
     "fastclone",
-    "fastcopy"
+    "object",
+    "fastcopy",
+    "recursive",
+    "properties",
+    "performant",
+    "values",
+    "prop",
+    "quick-clone",
+    "quick-deep",
+    "quick-deep-clone",
+    "keys"
   ],
   "author": "Yuriy Khomenko",
   "license": "MIT",
