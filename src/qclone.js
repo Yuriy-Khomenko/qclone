@@ -19,10 +19,8 @@ function qclone(o){
     case Array:
       let p,j = o.length, a = new Array(j);
       for(let i = 0; i < j; i++){
-        if(i in o){
-          p = o[i];
-          a[i] = (typeof p !== 'object' || p === null) ? p : qclone(p);
-        }
+        p = o[i];
+        a[i] = (typeof p !== 'object' || p === null) ? p : qclone(p);
       }
       return a;
     case undefined:

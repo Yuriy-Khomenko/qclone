@@ -31,14 +31,12 @@ function qcloneCircular(o){
       case Array:
         let p,j = o.length, a = new Array(j);
         for(let i = 0; i < j; i++){
-          if(i in o){
-            p = o[i];
-            if(typeof p !== 'object' || p === null){
-              a[i] = p;
-            }else{
-              let pi = __o__.indexOf(p);
-              a[i] = (~pi) ? __c__[pi] : qclone(p);
-            }
+          p = o[i];
+          if(typeof p !== 'object' || p === null){
+            a[i] = p;
+          }else{
+            let pi = __o__.indexOf(p);
+            a[i] = (~pi) ? __c__[pi] : qclone(p);
           }
         }
         return a;
