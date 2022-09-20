@@ -10,11 +10,11 @@ npm install --save qclone
 
 ### Usage
 
-const { qclone } = require('qclone');
+const qclone = require('qclone');
 
 or connect separate modules:
 
-const qclone = require('qclone/src/qcloneStrictCircular');
+const qclone = require('qclone/qcloneStrictCircular');
 
 ```javascript
 const newCloneObj = qclone({ foo: 1 });
@@ -23,17 +23,19 @@ const newCloneObj = qclone({ foo: 1 });
 ### Features
 
 - support for all new classes ES6;
-- very quickly clone(qclone);
-- correctly clone(qcloneStrict / qcloneStrictCircular);
-- support circular objects(qcloneCircular / qcloneStrictCircular);
+- very quickly clone(**qclone**);
+- correctly clone(**qcloneStrict** / **qcloneStrictCircular**);
+- support circular objects(**qcloneCircular** / **qcloneStrictCircular**);
 - library has no dependencies;
 
-For more than 90% of cases, the algorithm is suitable - qclone.
+The library contains four cloning functions: **qclone**, **qcloneStrict**, **qcloneCircular**, **qcloneStrictCircular**.
+
+For more than 90% of cases, the algorithm is suitable - **qclone**.
 If you lack it, for example, for cyclic objects or strict copying, you can use the following algorithms:
 
-- qcloneStrict - for strict cloning(non-enumerable and Symbol properties);
-- qcloneCircular - for cyclic objects (without strict cloning);
-- qcloneStrictCircular - for strict cloning of cyclic objects;
+- **qcloneStrict** - for strict cloning(non-enumerable and Symbol properties);
+- **qcloneCircular** - for cyclic objects (without strict cloning);
+- **qcloneStrictCircular** - for strict cloning of cyclic objects;
 
 ### Benchmarks
 
